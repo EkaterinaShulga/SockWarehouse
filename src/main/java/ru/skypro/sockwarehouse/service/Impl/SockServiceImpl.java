@@ -33,7 +33,7 @@ public class SockServiceImpl implements SockService {
      */
     @Override
     public void createSock(SockDto sockDto) {
-        log.info("createSock - SockServiceImpl");
+        log.info("method - createSock - SockServiceImpl");
         int count = sockDto.getQuantity();
         try {
             while (count > 0) {
@@ -54,8 +54,8 @@ public class SockServiceImpl implements SockService {
      */
     @Override
     public List<Sock> getSocks(String color) {
-        log.info("getSocks - SockServiceImpl");
-        return sockRepository.findByColor(color).
+        log.info("method - getSocks - SockServiceImpl");
+        return sockRepository.findSocksByColor(color).
                 orElseThrow(() -> new SockNotFoundException("Носки такого цвета  " + color + " не найдены!"));
 
     }
@@ -69,7 +69,7 @@ public class SockServiceImpl implements SockService {
      */
     @Override
     public List<Sock> getSocksByColorAndCottonPart(String color, int cottonPart) {
-        log.info("getSocksByColorAndCottonPart - SockServiceImpl");
+        log.info("method - getSocksByColorAndCottonPart - SockServiceImpl");
         return sockRepository.findByColorAndCottonPart(color, cottonPart)
                 .orElseThrow(() -> new SockNotFoundException("Носки такого цвета  " + color
                         + "и состава" + cottonPart + " не найдены!"));
@@ -85,7 +85,7 @@ public class SockServiceImpl implements SockService {
 
     @Override
     public void issueSocks(List<Sock> socks, SockDto sockDto) {
-        log.info("issueSocks - SockServiceImpl");
+        log.info("method - issueSocks - SockServiceImpl");
         int count = sockDto.getQuantity();
         int i = 0;
         List<Sock> result = new ArrayList<>(count);
@@ -114,8 +114,8 @@ public class SockServiceImpl implements SockService {
      * @return List<Sock>
      */
     @Override
-    public String getSockByTitle(List<Sock> socks, String operation, int cottonPart) {
-        log.info("getSockByTitle - SockServiceImpl");
+    public String getSocksByTitle(List<Sock> socks, String operation, int cottonPart) {
+        log.info("method - getSockByTitle - SockServiceImpl");
         List<Sock> result = new ArrayList<>();
         try {
             switch (operation) {

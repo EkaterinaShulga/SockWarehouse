@@ -34,7 +34,7 @@ public class SockController {
     )
     @PostMapping("/income")
     public ResponseEntity<HttpStatus> createSock(@RequestBody SockDto sockDto) {
-        log.info("createSock Controller");
+        log.info("method - createSock - Controller");
         if (sockDto.getQuantity() <= 0 || sockDto.getColor().isEmpty() || sockDto.getCottonPart() <= 0 || sockDto.getCottonPart() > 100) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
@@ -53,7 +53,7 @@ public class SockController {
     )
     @PostMapping("/outcome")
     public ResponseEntity<HttpStatus> issueSock(@RequestBody SockDto sockDto) {
-        log.info("issueSock Controller");
+        log.info("method - issueSock - Controller");
         List<Sock> socks = service.getSocksByColorAndCottonPart(sockDto.getColor(), sockDto.getCottonPart());
         if (socks.isEmpty()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
@@ -79,12 +79,12 @@ public class SockController {
     public ResponseEntity<String> getSockByTitle(@RequestParam(value = "color") String color,
                                                  @RequestParam(value = "operation") String operation,
                                                  @RequestParam(value = "cottonPart") int cottonPart) {
-        log.info("getSockByTitle Controller");
+        log.info("method - getSockByTitle - Controller");
 
         List<Sock> socks = service.getSocks(color);
         if (socks.isEmpty()) {
             ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
-        return ResponseEntity.ok(service.getSockByTitle(socks, operation, cottonPart));
+        return ResponseEntity.ok(service.getSocksByTitle(socks, operation, cottonPart));
     }
 }

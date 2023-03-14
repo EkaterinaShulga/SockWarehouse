@@ -15,5 +15,5 @@ public interface SockService {
 
     void issueSocks(List<Sock> socks, SockDto sockDto);
 
-    String getSockByTitle(List<Sock> socks, String operation, int cottonPart);
+    String getSocksByTitle(List<Sock> socks, String operation, int cottonPart);
 }

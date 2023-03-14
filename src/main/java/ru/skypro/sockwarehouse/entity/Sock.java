@@ -10,7 +10,7 @@ import java.util.Objects;
  * schema : <br>
  * id - id sock  <br>
  * color - color sock <br>
- * cottonPart - cotton part of sock <br>
+ * cottonPart - cotton part of socks <br>
  */
 
 @Entity

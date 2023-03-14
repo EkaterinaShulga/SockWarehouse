@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
 public class SockNotFoundException extends RuntimeException {
-    public SockNotFoundException(String s) {
+    public SockNotFoundException(String text) {
     }
 
 }
