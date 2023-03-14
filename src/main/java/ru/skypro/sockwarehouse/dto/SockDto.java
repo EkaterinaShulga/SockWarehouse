@@ -4,7 +4,8 @@ package ru.skypro.sockwarehouse.dto;
 import lombok.Data;
 
 /**
- * SockDto - dto, schema : <br>
+ * SockDto - dto <br>
+ * schema : <br>
  * id - id sockDto  <br>
  * color - color SockDto <br>
  * cottonPart - cotton part of sock <br>
