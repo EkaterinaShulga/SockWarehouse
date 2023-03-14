@@ -64,7 +64,7 @@ public class SockServiceImplTest {
     void getSocksTest() {
         List<Sock> sockList = new ArrayList<>();
         sockList.add(sock);
-        when(sockRepository.findByColor(anyString())).thenReturn(Optional.of(sockList));
+        when(sockRepository.findSocksByColor(anyString())).thenReturn(Optional.of(sockList));
 
         assertNotNull(sockService.getSocks(sockDto.getColor()));
     }
@@ -90,7 +90,7 @@ public class SockServiceImplTest {
     void getSockByTitle() {
         List<Sock> sockList = new ArrayList<>();
         sockList.add(sock);
-        String result = sockService.getSockByTitle(sockList, "equal", 50);
+        String result = sockService.getSocksByTitle(sockList, "equal", 50);
 
         assertNotNull(result);
 

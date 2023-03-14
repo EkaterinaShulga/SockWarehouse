@@ -6,10 +6,11 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 /**
- * Sock - entity, schema : <br>
+ * Sock - entity <br>
+ * schema : <br>
  * id - id sock  <br>
  * color - color sock <br>
- * cottonPart - cotton part of sock <br>
+ * cottonPart - cotton part of socks <br>
  */
 
 @Entity

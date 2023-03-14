@@ -7,7 +7,7 @@ import ru.skypro.sockwarehouse.dto.SockDto;
 import ru.skypro.sockwarehouse.entity.Sock;
 
 /**
- * converts {@code SockDto(DTO)} in {@code Sock(Entity)}  <br>
+ * converts {@code SockDto(DTO)} in {@code Sock(Entity)}
  *
  * @see Sock
  * @see SockDto

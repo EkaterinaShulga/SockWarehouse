@@ -8,7 +8,7 @@ CREATE TABLE Socks
     cotton_part integer
 
 );
-
+--changeset shulga:2
 create sequence socks_seq
     increment by 50;
 
